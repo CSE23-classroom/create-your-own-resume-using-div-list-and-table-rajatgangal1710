@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CSS Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .grid-container div {
+            border-radius: 5px;
+            background-color: #777;
+            color: rgb(7, 0, 0);
+            padding: 20px;
+            border: 1px solid #777;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+                "logo logo logo"
+                "header header header"
+                "text-area text-area text-area"
+                "box1 box2 box3"
+                "footer footer footer";
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .text-area {
+            grid-area: text-area;
+            min-height: 80px;
+        }
+
+        .box1 {
+            margin-right: 10px;
+            grid-area: box1;
+            min-height: 200px;
+
+        }
+
+        .box2 {
+            margin-right: 10px;
+
+            grid-area: box2;
+            min-height: 200px;
+        }
+
+        .box3 {
+            grid-area: box3;
+            min-height: 200px;
+        }
+
+        .footer {
+            grid-area: footer;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="logo">Logo</div>
+        <div class="header">Header</div>
+        <div class="text-area">Text Area</div>
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+
+</html>
